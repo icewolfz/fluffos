@@ -23,11 +23,11 @@
 #undef NO_ADD_ACTION
 #undef NO_SNOOP
 #undef NO_ENVIRONMENT
-#undef NO_WIZARDS
-#undef NO_LIGHT
+#define NO_WIZARDS
+#define NO_LIGHT
 #define OLD_ED
 #undef ED_INDENT_CASE
-#define ED_INDENT_SPACES 4
+#define ED_INDENT_SPACES 3
 #undef ED_USE_TABS
 #define ED_TAB_WIDTH 8
 #undef RECEIVE_ED
@@ -39,13 +39,13 @@
  ****************************************************************************/
 #define DEFAULT_PRAGMAS PRAGMA_WARNINGS + PRAGMA_SAVE_TYPES + PRAGMA_ERROR_CONTEXT + PRAGMA_OPTIMIZE
 #define SAVE_EXTENSION ".o"
-#define PRIVS
+#undef PRIVS
 #undef NO_SHADOWS
 #undef USE_ICONV
 #undef IPV6
 // configs to change how strings are handled
 #undef OLD_STRING
-#undef UTF8_ERROR_TO_BUFFER
+#define UTF8_ERROR_TO_BUFFER
 
 /****************************************************************************
  *                              PACKAGES                                    *
@@ -62,9 +62,77 @@
 
 // configs for PACKAGE_UIDS
 #define AUTO_SETEUID
-#undef AUTO_TRUST_BACKBONE
+#define AUTO_TRUST_BACKBONE
 
 // configs for PACKAGE_PARSE
 #define PARSE_DEBUG /* Only take effect in DEBUG build */
+
+//ShadowmMUD, need to read up and see if these need to even be set anymore
+#undef HAS_STATUS_TYPE
+#undef CAST_CALL_OTHERS
+#undef CUSTOM_CRYPT
+#undef COMPAT_32
+#define STRING_STATS
+#define ARRAY_STATS
+#define CLASS_STATS
+#define LOG_CATCHES
+#define ARGUMENTS_IN_TRACEBACK
+#define LOCALS_IN_TRACEBACK
+//#define CONFIG_FILE_DIR ""
+#define CALLOUT_HANDLES
+#undef FLUSH_OUTPUT_IMMEDIATELY
+//#define PROFILE_FUNCTIONS
+#undef NO_BUFFER_TYPE
+#define BINARIES
+#define ARRAY_RESERVED_WORD
+#define REF_RESERVED_WORD
+
+//be leave all these defines can be moved to cmake arguments now for packages
+#define PACKAGE_CONTRIB
+#define PACKAGE_DEVELOP
+#define PACKAGE_MATH
+#define PACKAGE_MATRIX
+#undef PACKAGE_MUDLIB_STATS
+#define PACKAGE_SOCKETS
+#undef PACKAGE_PARSER
+#define PACKAGE_EXTERNAL
+#ifdef PACKAGE_EXTERNAL
+#define NUM_EXTERNAL_CMDS 100
+#endif
+#undef PACKAGE_DB
+#define PACKAGE_SM
+#define PACKAGE_UIDS
+#define PACKAGE_COMPRESS
+#undef PACKAGE_DWLIB
+#define PACKAGE_ASYNC
+#define PACKAGE_CRYPTO
+#define PACKAGE_SHA1
+#define PACKAGE_PCRE
+#undef PACKAGE_DSLIB
+
+
+#define USE_32BIT_ADDRESSES
+#define HEARTBEAT_INTERVAL 2
+#define CALLOUT_CYCLE_SIZE 64
+//#define HEART_BEAT_CHUNK      64
+//#define SMALL_STRING_SIZE     100
+//#define LARGE_STRING_SIZE     1000
+//#define COMMAND_BUF_SIZE      2000
+//#define MAX_SAVE_SVALUE_DEPTH 50
+//not sure why we changed this to such a large number, leave comment out to test
+//#define CFG_COMPILER_STACK_SIZE		600000
+#undef GET_CHAR_IS_BUFFERED
+
+//#define HAVE_ZLIB //already set by default
+#define ALLOW_INHERIT_AFTER_FUNCTION
+#define IPV6
+#undef DTRACE
+#undef STRUCT_CLASS
+#undef STRUCT_STRUCT
+#define POSIX_TIMERS
+#define FLUFFOS
+#undef PARSE_DEBUG
+#undef ALLOW_INHERIT_AFTER_GLOBAL_VARIABLES
+#undef DROP_CORE
 
 #endif /* _LOCAL_OPTIONS_H_ */

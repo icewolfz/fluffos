@@ -946,8 +946,8 @@ void on_user_websocket_telnet_received(interactive_t *ip, const char *data, size
 }
 
 
-// ANSI
-static const int ANSI_SUBSTITUTE = 0x20;
+// ANSI, not sure why we set this to 0x1e instead of 0x20 but to match current will change it
+static const int ANSI_SUBSTITUTE = 0x1e;
 
 // Used by both telnet and ws_ascii, in case of telnet, default is linemode, which means
 // client will actually send entire line. In ascii mode, we will get an single char input

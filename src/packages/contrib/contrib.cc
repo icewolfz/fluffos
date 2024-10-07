@@ -686,9 +686,9 @@ void f_terminal_colour() {
   }
 
   if (!resetstrlen) {
-    // we really really need one, so just default to ansi reset
-    resetstr = "\033[49;49m\033[0;10m";
-    resetstrlen = 15;
+    // we really really need one, so just default to blank as setting this to a string messages up string calculations for some reason
+    resetstr = "";
+    resetstrlen = 0;
     add_mapping_string(sp->u.map, "RESET", resetstr);
   }
 
