@@ -90,6 +90,8 @@ title: EFUN
 * [upper_case](contrib/upper_case.html)
 * [variables](contrib/variables.html)
 * [zonetime](contrib/zonetime.html)
+## crypto
+* [hash](crypto/hash.html)
 ## db
 * [db_close](db/db_close.html)
 * [db_commit](db/db_commit.html)
@@ -197,8 +199,8 @@ title: EFUN
 * [find_player](interactive/find_player.html)
 * [get_char](interactive/get_char.html)
 * [has_gmcp](interactive/has_gmcp.html)
-* [has_msp](interactive/has_msp.html)
 * [has_msdp](interactive/has_msdp.html)
+* [has_msp](interactive/has_msp.html)
 * [has_mxp](interactive/has_mxp.html)
 * [has_zmp](interactive/has_zmp.html)
 * [in_edit](interactive/in_edit.html)
@@ -324,9 +326,13 @@ title: EFUN
 * [virtualp](objects/virtualp.html)
 ## parsing
 * [parse_add_rule](parsing/parse_add_rule.html)
+* [parse_add_synonym](parsing/parse_add_synonym.html)
 * [parse_command](parsing/parse_command.html)
+* [parse_dump](parsing/parse_dump.html)
 * [parse_init](parsing/parse_init.html)
+* [parse_my_rules](parsing/parse_my_rules.html)
 * [parse_refresh](parsing/parse_refresh.html)
+* [parse_remove](parsing/parse_remove.html)
 * [parse_sentence](parsing/parse_sentence.html)
 * [process_string](parsing/process_string.html)
 * [process_value](parsing/process_value.html)
@@ -349,8 +355,10 @@ title: EFUN
 * [socket_connect](sockets/socket_connect.html)
 * [socket_create](sockets/socket_create.html)
 * [socket_error](sockets/socket_error.html)
+* [socket_get_option](sockets/socket_get_option.html)
 * [socket_listen](sockets/socket_listen.html)
 * [socket_release](sockets/socket_release.html)
+* [socket_set_option](sockets/socket_set_option.html)
 * [socket_status](sockets/socket_status.html)
 * [socket_write](sockets/socket_write.html)
 ## strings

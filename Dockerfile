@@ -1,4 +1,4 @@
-FROM alpine:3.18 as builder
+FROM alpine:3.18 AS builder
 
 RUN apk add --no-progress --no-cache \
     linux-headers gcc g++ clang-dev make cmake bash \
@@ -24,6 +24,9 @@ RUN cmake .. -DMARCH_NATIVE=OFF -DSTATIC=ON \
     && make install
 
 FROM alpine:3.18
+
+RUN apk add --no-progress --no-cache \
+    icu-data-full
 
 WORKDIR /fluffos
 
